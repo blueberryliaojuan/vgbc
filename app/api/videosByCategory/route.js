@@ -1,5 +1,5 @@
 // app/api/videosByCategory/route.js
-export async function GET(req) {
+export async function GET() {
   try {
     const API_KEY = process.env.YOUTUBE_API_KEY;
     const CHANNEL_ID = "UCyPYd9QV01Okikic7IlL-Mw"; // 固定频道 ID
