@@ -23,7 +23,10 @@ interface VideoData {
 }
 
 export default function VideosByCategory() {
-  const { data, error } = useSWR<VideoData>("/api/videosByCategory", fetcher);
+  const { data, error } = useSWR<VideoData>(
+    typeof window !== "undefined" ? "/api/videosByCategory" : null,
+    fetcher
+  );
 
   if (error) return <div>加载失败</div>;
   if (!data) return <div>加载中…</div>;
