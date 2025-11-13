@@ -1,1 +1,0 @@
-//Delete => /api/articles/:id

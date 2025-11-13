@@ -3,11 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --platinum: #e7e7e7;
+  --oxfordBlue: #191d32;
+  --persianGreen: #1b998b;
+  --tomato: #f95738;
+  --text: #050316;
+  --greenBackground: #dae9e6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-platinum: var(--platinum);
+  --color-oxfordBlue: var(--oxfordBlue);
+  --color-persianGreen: var(--persianGreen);
+  --color-tomato: var(--tomato);
+  --color-greenBackground: var(--greenBackground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,4 +27,55 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Swiper 默认导航按钮样式优化 */
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px !important; /* 正圆宽高 */
+  height: 40px !important;
+  border-radius: 50%; /* 圆形 */
+  background-color: #1b998b; /* 背景色 */
+  color: white; /* 箭头颜色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  top: 50% !important; /* 垂直居中 */
+  margin-top: -20px !important; /* 高度的一半，保证居中 */
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: white;
+  font-size: 18px !important; /* 修改按钮大小，默认是 20px */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #000;
+  /* transform: scale(1.1); */
+}
+
+/* 把按钮移到 swiper container 外部一点 */
+.swiper-button-prev {
+  left: -20px !important;
+}
+.swiper-button-next {
+  right: -20px !important;
+}
+
+/* 仅在 hover section 时显示（可选） */
+.group:hover .swiper-button-prev,
+.group:hover .swiper-button-next {
+  opacity: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  opacity: 0.8;
 }
